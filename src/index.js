@@ -1,17 +1,47 @@
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import MiniDrawer from './App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Teams  from './scenes/teams/teams'
+import Dashboard  from './scenes/dashboard/dashboard'
+import Contacts from "./scenes/contacts/contacts";
+import Invoices from "./scenes/invoices/invoices";
+import NewUser from "./scenes/new-user/newUser";
+import Accordioner from "./scenes/accordion/accordion";
+import CalenderTodoList from "./scenes/CalenderTodoList/CalenderTodoList.jsx";
+import ChartBar from "./scenes/ChartBar/ChartBar.jsx";
+import PieChart from "./scenes/piechart/piechart.jsx";
+import LineChart from "./scenes/lineChart/lineChart";
+import Geo from "./scenes/geo/Geo";
+
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<MiniDrawer />}>
+     <Route index element={<Dashboard />}/>
+     <Route path="team" element={<Teams />}/>
+     <Route path="contacts" element={<Contacts />}/>
+     <Route path="invoices" element={<Invoices />}/>
+     <Route path="form" element={<NewUser />}/>
+     <Route path="calendar" element={<CalenderTodoList/>}/>
+     <Route path="faq" element={<Accordioner />}/>
+     <Route path="bar" element={<ChartBar />}/>
+     <Route path="pie" element={<PieChart />}/>
+     <Route path="line" element={<LineChart />}/>
+     <Route path="geography" element={<Geo />}/>
+    </Route>
+  )
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
