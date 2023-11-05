@@ -56,7 +56,7 @@ this project was made to practice advanced dashboards in case if there is a back
 
 ## Demo
 
-* you can use it from here: https://admin-dashbaord-material-ui.vercel.app/geography
+* you can use it from here: https://admin-dashbaord-material-ui.vercel.app/
 
 ## Contact
 
